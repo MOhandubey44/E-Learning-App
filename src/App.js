@@ -5,14 +5,11 @@ import Learn from "./pages/app/learn/Learn"
 import Chapter from "./pages/app/chapter/Chapter";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Details from "./pages/app/details/Details";
-import ReactGA from "react-ga4"
-import { useEffect } from "react";
+
+
 
 function App() {
-  useEffect(() => {
-    // Track page view for this component
-    ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search, title: "Home Page" });
-  }, []);
+  
   const browerRouter = createBrowserRouter([
     {
       path: '/',
