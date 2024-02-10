@@ -1,8 +1,19 @@
 import style from "./Nav.module.css";
 import { Outlet } from "react-router-dom";
 import { Link, NavLink } from "react-router-dom";
+import ReactGA from "react-ga4";
 
 function Nav() {
+  const sendData = () => {
+    ReactGA.event({
+      category: "Click",
+      action: "your action",
+      label: "your label", // optional
+      value: 99, // optional, must be a number
+      nonInteraction: true, // optional, true/false
+      transport: "xhr", // optional, beacon/xhr/image
+    });
+  };
   return (
     <>
       <nav>
@@ -18,7 +29,7 @@ function Nav() {
             <h4>Coding Ninjas</h4>
           </div>
           <div className={style.nav_details}>
-            <button>
+            <button onClick={() => sendData()}>
               <NavLink to="/courses">
                 {({ isActive }) => (isActive ? "On-Course" : "Courses")}
               </NavLink>
