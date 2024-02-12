@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Chapter.module.css";
 import { useOutletContext, useParams } from "react-router-dom";
+import ReactGA from "react-ga4";
 
 function Chapter() {
   const { chapterId } = useParams();
@@ -10,6 +11,15 @@ function Chapter() {
     (chapter) => String(chapter.chapter) === chapterId
   );
   console.log(chapter);
+
+  useEffect(() => {
+    // Track page view for this component
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname + window.location.search,
+      title: "Chapter View",
+    });
+  }, []);
   return (
     <div>
       <h1>{chapter.title}</h1>
