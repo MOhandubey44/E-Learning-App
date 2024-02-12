@@ -20,6 +20,8 @@ function Chapter() {
       title: "Chapter View",
     });
   }, []);
+
+  
   return (
     <div>
       <h1>{chapter.title}</h1>
