@@ -2,11 +2,17 @@ import React from "react";
 import style from "./Details.module.css";
 import coursesData from "../../../data/courses.json";
 //Third task: import useParams hook
-import {Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import ReactGA from "react-ga4";
 function Details() {
   const { courseId } = useParams();
 
-  const course = coursesData.find(courses=>courses.id === courseId);
+  useEffect(() => {
+   
+  }, []);
+
+  const course = coursesData.find((courses) => courses.id === courseId);
   return (
     //Third Task: get course id and match it with the data
     <div className={style.courses_container}>
@@ -24,8 +30,8 @@ function Details() {
         </div>
       </div>
       {/* Task4: create Link to the Learn Page */}
-      <Link to = {`/learn/${course.id}`}>
-          <button className={style.button}>Start Learning</button>
+      <Link to={`/learn/${course.id}`}>
+        <button className={style.button}>Start Learning</button>
       </Link>
     </div>
   );

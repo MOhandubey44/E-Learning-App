@@ -1,12 +1,19 @@
-import React, { useEffect } from 'react';
-import style from './Courses.module.css';
-import Card from '../../../components/card';
-import coursesData from '../../../data/courses.json';
-import { Link } from 'react-router-dom';
-import ReactGA from "react-ga4"
+import React, { useEffect } from "react";
+import style from "./Courses.module.css";
+import Card from "../../../components/card";
+import coursesData from "../../../data/courses.json";
+import { Link } from "react-router-dom";
+import ReactGA from "react-ga4";
 function Courses() {
 
-  useEffect(()=>{
+  
+  useEffect(() => {
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname + window.location.search,
+      title: "Deatails Page",
+    });
+
     ReactGA.event({
       category: "page_view",
       action: "courses page view",
@@ -15,7 +22,7 @@ function Courses() {
       nonInteraction: true, // optional, true/false
       transport: "xhr", // optional, beacon/xhr/image
     });
-  })
+  });
   return (
     <div className={style.courses_container}>
       <div className={style.heading}>
