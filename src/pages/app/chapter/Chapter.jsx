@@ -12,15 +12,16 @@ function Chapter() {
   );
   console.log(chapter);
 
-  // useEffect(() => {
-  //   // Track page view for this component
-  //   ReactGA.send({
-  //     hitType: "pageview",
-  //     page: window.location.pathname + window.location.search,
-  //     title: "Chapter View",
-  //   });
-  // }, []);
+  useEffect(() => {
+    // Track page view for this component
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname + window.location.search,
+      title: "Chapter View",
+    });
+  }, []);
 
+  
   return (
     <div>
       <h1>{chapter.title}</h1>

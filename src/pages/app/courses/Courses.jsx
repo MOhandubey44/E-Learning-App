@@ -6,17 +6,16 @@ import { Link } from 'react-router-dom';
 import ReactGA from "react-ga4"
 function Courses() {
 
-  // useEffect(()=>{
-  //   ReactGA.event({
-  //     category: "page_view",
-  //     action: "courses page view",
-  //     label: "Courses View", // optional
-  //     value: 99, // optional, must be a number
-  //     nonInteraction: true, // optional, true/false
-  //     transport: "xhr", // optional, beacon/xhr/image
-  //   });
-  // })
-
+  useEffect(()=>{
+    ReactGA.event({
+      category: "page_view",
+      action: "courses page view",
+      label: "Courses View", // optional
+      value: 99, // optional, must be a number
+      nonInteraction: true, // optional, true/false
+      transport: "xhr", // optional, beacon/xhr/image
+    });
+  })
   return (
     <div className={style.courses_container}>
       <div className={style.heading}>

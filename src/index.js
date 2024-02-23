@@ -3,8 +3,9 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import TagManager from "react-gtm-module";
-import "./analytics";
-import { initGA4, pageView } from './analytics';
+import reactGA from "react-ga4";
+
+reactGA.initialize("G-7T2PKJQD90");
 
 const tagManagerArgs = {
   gtmId: "GTM-57VFRXXK",
