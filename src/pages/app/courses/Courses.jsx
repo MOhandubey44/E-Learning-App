@@ -8,8 +8,8 @@ function Courses() {
 
   useEffect(()=>{
     ReactGA.event({
-      category: "Click",
-      action: "My action",
+      category: "page_view",
+      action: "courses page view",
       label: "Courses View", // optional
       value: 99, // optional, must be a number
       nonInteraction: true, // optional, true/false
