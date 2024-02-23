@@ -5,7 +5,6 @@ import App from "./App";
 import TagManager from "react-gtm-module";
 import "./analytics";
 
-
 const tagManagerArgs = {
   gtmId: "GTM-57VFRXXK",
 };
