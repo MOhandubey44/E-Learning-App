@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Details from "./pages/app/details/Details";
 import "./analytics";
 
+
 function App() {
   const browerRouter = createBrowserRouter([
     {
