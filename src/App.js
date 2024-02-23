@@ -5,10 +5,17 @@ import Learn from "./pages/app/learn/Learn";
 import Chapter from "./pages/app/chapter/Chapter";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Details from "./pages/app/details/Details";
-import "./analytics";
-
+// import "./analytics";
+import { useEffect } from "react";
+import { initGA4, pageView } from "./analytics";
 
 function App() {
+  useEffect(() => {
+    const measurementId = "G-7T2PKJQD90"; // Replace with your actual Measurement ID
+    initGA4(measurementId);
+    pageView();
+  }, []);
+
   const browerRouter = createBrowserRouter([
     {
       path: "/",

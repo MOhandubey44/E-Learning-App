@@ -1,7 +1,10 @@
-// src/analytics.js
-import { initializeGA4, logPageView } from "react-ga4";
+import ReactGA4 from 'react-ga4';
 
-const measurementId = "G-7T2PKJQD90";
+export const initGA4 = (measurementId) => {
+  ReactGA4.initialize(measurementId);
+  ReactGA4.send('pageview');
+};
 
-initializeGA4({ measurementId });
-logPageView();
+export const pageView = () => {
+  ReactGA4.send('pageview');
+};

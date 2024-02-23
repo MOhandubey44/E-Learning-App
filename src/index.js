@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import TagManager from "react-gtm-module";
 import "./analytics";
+import { initGA4, pageView } from './analytics';
 
 const tagManagerArgs = {
   gtmId: "GTM-57VFRXXK",
