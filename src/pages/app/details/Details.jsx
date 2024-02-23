@@ -9,7 +9,11 @@ function Details() {
   const { courseId } = useParams();
 
   useEffect(() => {
-   
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname + window.location.search,
+      title: "Deatails Page",
+    });
   }, []);
 
   const course = coursesData.find((courses) => courses.id === courseId);
